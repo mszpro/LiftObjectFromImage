@@ -11,6 +11,8 @@
 		2AB7171C2C0217740050ADB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7171B2C0217740050ADB8 /* ContentView.swift */; };
 		2AB7171E2C0217760050ADB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AB7171D2C0217760050ADB8 /* Assets.xcassets */; };
 		2AB717212C0217760050ADB8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AB717202C0217760050ADB8 /* Preview Assets.xcassets */; };
+		2AB7172C2C0218AA0050ADB8 /* ObjectExtraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7172B2C0218AA0050ADB8 /* ObjectExtraction.swift */; };
+		2AB717312C0221EC0050ADB8 /* ObjectPickableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB717302C0221EC0050ADB8 /* ObjectPickableImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		2AB7171B2C0217740050ADB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2AB7171D2C0217760050ADB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AB717202C0217760050ADB8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2AB7172B2C0218AA0050ADB8 /* ObjectExtraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectExtraction.swift; sourceTree = "<group>"; };
+		2AB717302C0221EC0050ADB8 /* ObjectPickableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectPickableImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 			children = (
 				2AB717192C0217740050ADB8 /* LifeObjectFromImageApp.swift */,
 				2AB7171B2C0217740050ADB8 /* ContentView.swift */,
+				2AB7172A2C0218000050ADB8 /* Tutorial */,
 				2AB7171D2C0217760050ADB8 /* Assets.xcassets */,
 				2AB7171F2C0217760050ADB8 /* Preview Content */,
 			);
@@ -65,6 +70,39 @@
 				2AB717202C0217760050ADB8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2AB7172A2C0218000050ADB8 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				2AB7172E2C021DD70050ADB8 /* Level 1 - Object Extraction */,
+				2AB717322C0228910050ADB8 /* Level 2 - Highlight Objects */,
+				2AB7172F2C021DDE0050ADB8 /* Level 3 - Background Replace */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		2AB7172E2C021DD70050ADB8 /* Level 1 - Object Extraction */ = {
+			isa = PBXGroup;
+			children = (
+				2AB717302C0221EC0050ADB8 /* ObjectPickableImageView.swift */,
+				2AB7172B2C0218AA0050ADB8 /* ObjectExtraction.swift */,
+			);
+			path = "Level 1 - Object Extraction";
+			sourceTree = "<group>";
+		};
+		2AB7172F2C021DDE0050ADB8 /* Level 3 - Background Replace */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Level 3 - Background Replace";
+			sourceTree = "<group>";
+		};
+		2AB717322C0228910050ADB8 /* Level 2 - Highlight Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Level 2 - Highlight Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +175,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AB717312C0221EC0050ADB8 /* ObjectPickableImageView.swift in Sources */,
+				2AB7172C2C0218AA0050ADB8 /* ObjectExtraction.swift in Sources */,
 				2AB7171C2C0217740050ADB8 /* ContentView.swift in Sources */,
 				2AB7171A2C0217740050ADB8 /* LifeObjectFromImageApp.swift in Sources */,
 			);

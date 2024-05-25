@@ -8,15 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        NavigationStack {
+            List {
+                
+                Text("Please test this on a physical device. Simulators are not supported.")
+                
+                NavigationLink("System provided pickable UIImageView") {
+                    ObjectExtraction()
+                }
+                
+            }
         }
-        .padding()
+        
     }
+    
 }
 
 #Preview {
