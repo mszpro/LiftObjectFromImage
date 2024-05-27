@@ -20,6 +20,10 @@ struct ContentView: View {
                     ObjectExtraction()
                 }
                 
+                NavigationLink("Running Vision requests") {
+                    VisionRequestDemo()
+                }
+                
             }
         }
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A74401C2C047D6C0037A26B /* VisionRequestDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A74401B2C047D6C0037A26B /* VisionRequestDemo.swift */; };
 		2AB7171A2C0217740050ADB8 /* LifeObjectFromImageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB717192C0217740050ADB8 /* LifeObjectFromImageApp.swift */; };
 		2AB7171C2C0217740050ADB8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB7171B2C0217740050ADB8 /* ContentView.swift */; };
 		2AB7171E2C0217760050ADB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AB7171D2C0217760050ADB8 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A74401B2C047D6C0037A26B /* VisionRequestDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionRequestDemo.swift; sourceTree = "<group>"; };
 		2AB717162C0217740050ADB8 /* LifeObjectFromImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeObjectFromImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AB717192C0217740050ADB8 /* LifeObjectFromImageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeObjectFromImageApp.swift; sourceTree = "<group>"; };
 		2AB7171B2C0217740050ADB8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,8 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				2AB7172E2C021DD70050ADB8 /* Level 1 - Object Extraction */,
-				2AB717322C0228910050ADB8 /* Level 2 - Highlight Objects */,
-				2AB7172F2C021DDE0050ADB8 /* Level 3 - Background Replace */,
+				2AB7172F2C021DDE0050ADB8 /* Level 2 - Background Replace */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -91,18 +92,12 @@
 			path = "Level 1 - Object Extraction";
 			sourceTree = "<group>";
 		};
-		2AB7172F2C021DDE0050ADB8 /* Level 3 - Background Replace */ = {
+		2AB7172F2C021DDE0050ADB8 /* Level 2 - Background Replace */ = {
 			isa = PBXGroup;
 			children = (
+				2A74401B2C047D6C0037A26B /* VisionRequestDemo.swift */,
 			);
-			path = "Level 3 - Background Replace";
-			sourceTree = "<group>";
-		};
-		2AB717322C0228910050ADB8 /* Level 2 - Highlight Objects */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Level 2 - Highlight Objects";
+			path = "Level 2 - Background Replace";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +174,7 @@
 				2AB7172C2C0218AA0050ADB8 /* ObjectExtraction.swift in Sources */,
 				2AB7171C2C0217740050ADB8 /* ContentView.swift in Sources */,
 				2AB7171A2C0217740050ADB8 /* LifeObjectFromImageApp.swift in Sources */,
+				2A74401C2C047D6C0037A26B /* VisionRequestDemo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

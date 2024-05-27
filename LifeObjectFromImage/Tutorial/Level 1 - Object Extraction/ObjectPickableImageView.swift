@@ -9,49 +9,49 @@ import Foundation
 import UIKit
 import SwiftUI
 import VisionKit
+import Combine
 
 @MainActor
-public struct ObjectPickableImageView: UIViewRepresentable {
+class ImageAnalysisViewModel: NSObject, ObservableObject {
+    let analyzer = ImageAnalyzer()
+    let interaction = ImageAnalysisInteraction()
+    var loadedImageView: UIImageView?
     
-    /* input to this view */
+    func analyzeImage(_ image: UIImage) async throws -> Set<ImageAnalysisInteraction.Subject> {
+        let configuration = ImageAnalyzer.Configuration([.visualLookUp])
+        let analysis = try await analyzer.analyze(image, configuration: configuration)
+        interaction.analysis = analysis
+        let detectedSubjects = await interaction.subjects
+        return detectedSubjects
+    }
+}
+
+@MainActor
+struct ObjectPickableImageView: UIViewRepresentable {
+    
     var imageObject: UIImage
-    @Binding var errorMessage: String?
-    @Binding var detectedObjects: Set<ImageAnalysisInteraction.Subject>
-    @Binding var selectedObjects: Set<ImageAnalysisInteraction.Subject>
     
-    /* objects used for displaying the image, and analyzing the content */
-    private let imageView = CustomizedUIImageView()
-    private let analyzer = ImageAnalyzer()
-    private let interaction = ImageAnalysisInteraction()
+    @EnvironmentObject var viewModel: ImageAnalysisViewModel
     
-    public func makeUIView(context: Context) -> UIImageView {
+    func makeUIView(context: Context) -> CustomizedUIImageView {
+        let imageView = CustomizedUIImageView()
+        
+        // configure the view with image object and analyzer interaction
         imageView.image = imageObject
         imageView.contentMode = .scaleAspectFit
-        interaction.preferredInteractionTypes = .imageSubject
-        imageView.addInteraction(interaction)
-        // run image analysis
-        Task { @MainActor in
-            do {
-                let configuration = ImageAnalyzer.Configuration([.visualLookUp])
-                let analysis = try await analyzer.analyze(imageObject, configuration: configuration)
-                interaction.analysis = analysis
-                let detectedSubjects = await interaction.subjects
-                self.detectedObjects = detectedSubjects
-                interaction.highlightedSubjects = self.selectedObjects
-            } catch {
-                self.errorMessage = error.localizedDescription
-            }
-        }
+        viewModel.interaction.preferredInteractionTypes = [.imageSubject]
+        imageView.addInteraction(viewModel.interaction)
+        
+        viewModel.loadedImageView = imageView
+        
         return imageView
     }
     
-    public func updateUIView(_ uiView: UIImageView, context: Context) {
-        self.interaction.highlightedSubjects = self.selectedObjects
-    }
+    func updateUIView(_ uiView: CustomizedUIImageView, context: Context) { }
     
 }
 
-fileprivate class CustomizedUIImageView: UIImageView {
+class CustomizedUIImageView: UIImageView {
     override var intrinsicContentSize: CGSize {
         .zero
     }
